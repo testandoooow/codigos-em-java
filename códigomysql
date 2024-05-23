@@ -1,0 +1,39 @@
+create database if not exists banco;
+
+use banco;
+
+create table if not exists garcom(
+idGarcom int primary key not null auto_increment,
+nome varchar(30),
+sobrenome varchar(50),
+senha varchar(20)
+);
+
+create table if not exists comanda(
+idComanda int primary key not null auto_increment,
+comida varchar(30),
+bebida varchar(30),
+valor double
+);
+
+create table if not exists mesa(
+idMesa int primary key not null auto_increment
+);
+
+create table if not exists garcom_mesa(
+idGarcom int,
+foreign key(idGarcom)
+references garcom(idGarcom),
+idMesa int,
+foreign key(idMesa)
+references mesa(idMesa)
+);
+
+create table if not exists mesa_comanda(
+idComanda int,
+foreign key(idComanda)
+references comanda(idComanda),
+idMesa int,
+foreign key(idMesa)
+references mesa(idMesa)
+);
