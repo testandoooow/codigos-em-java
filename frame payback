@@ -1,0 +1,88 @@
+package payback;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+
+public class JFrame extends javax.swing.JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField valorInvestimento;
+	private JTextField valorSaldo;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					JFrame frame = new JFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public JFrame() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel investimentoTexto = new JLabel("Digite o investimento:");
+		investimentoTexto.setBounds(10, 11, 152, 14);
+		contentPane.add(investimentoTexto);
+		
+		valorInvestimento = new JTextField();
+		valorInvestimento.setBounds(137, 8, 86, 20);
+		contentPane.add(valorInvestimento);
+		valorInvestimento.setColumns(10);
+		
+		JButton inserir = new JButton("Inserir");
+		inserir.setBounds(79, 77, 74, 23);
+		contentPane.add(inserir);
+		
+		JLabel saldoTexto = new JLabel("Digite o saldo:");
+		saldoTexto.setBounds(10, 36, 116, 14);
+		contentPane.add(saldoTexto);
+		JLabel retorno = new JLabel("");
+		retorno.setLocation(258, 23);
+		retorno.setSize(150, 14);
+		
+		inserir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String texto = valorInvestimento.getText();
+				double investimento = Integer.parseInt(texto);
+				texto = valorSaldo.getText();
+				double saldo = Integer.parseInt(texto);
+				
+				double x = investimento / saldo;
+				String payback = String.format("%.1f", x);
+				
+				retorno.setText("Retorno em "+payback+" meses");
+			}
+		});
+		contentPane.add(retorno);
+		valorSaldo = new JTextField();
+		valorSaldo.setBounds(137, 36, 86, 20);
+		contentPane.add(valorSaldo);
+		valorSaldo.setColumns(10);
+	}
+}
