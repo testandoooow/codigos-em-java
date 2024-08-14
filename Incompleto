@@ -1,0 +1,36 @@
+package abc;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner info = new Scanner(System.in);
+		double consumoAcumulado = 0;
+		String material[] = new String[9];
+		double preco[] = new double[9];
+		double consumo[] = new double[9];
+		double consumoAnual[] = new double[9];
+		for(int i = 0; i < 2; i++) {
+			System.out.println("Digite o material: ");
+			material[i] = info.next();
+			System.out.println("Digite o preço: ");
+			preco[i] = info.nextDouble();
+			//System.out.println("Digite o consumo: ");
+			//consumo[i] = info.nextDouble();
+			System.out.println("Digite o consumo anual: ");
+			consumoAnual[i] = info.nextDouble();
+			
+			consumoAcumulado = 175.500;
+		}
+		
+		double x[] = new double[9];
+		for(int i = 0; i < 2; i++) {
+			x[i] = consumoAcumulado / (consumoAnual[i] * 100);
+			System.out.println(x[i]);
+			if(x[i]< 70) {
+				System.out.println("A");
+			}
+		}
+	}
+
+}
