@@ -1,0 +1,100 @@
+package loteEconomico;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner info = new Scanner(System.in);
+		/*double a[] = {100, 353, 1000}; // quantidade pedida
+		double b[] = new double[3];
+		double ca = 3000; // consumo anual
+		double cpa = 0.25; // custo do material armazenado
+		double cc = 130; // custo do pedido de compra
+		double pu = 25; // preço unitário
+		double c[] = new double[3];
+		double d[] = new double[3];
+		double e[] = new double[3];
+		double f[] = new double[3];*/
+		System.out.println("Digite a quantidade de materiais: ");
+		int materiais = info.nextInt();
+		
+		double a[] = new double[materiais+1]; // quantidade pedida
+		double b[] = new double[materiais+1];
+		double c[] = new double[materiais+1];
+		double d[] = new double[materiais+1];
+		double e[] = new double[materiais+1];
+		double f[] = new double[materiais+1];
+		
+		System.out.println("Digite o consumo anual: ");
+		double ca = info.nextDouble();
+		System.out.println("Digite o custo do pedido de compra: ");
+		double cc = info.nextDouble();
+		System.out.println("Digite o custo do material armazenado: ");
+		String numero = info.next();
+		double cpa = Double.parseDouble(numero);
+		System.out.println("Digite o preco unitario: ");
+		double pu = info.nextDouble();
+	
+		for(int i = 0; i < materiais+1; i++) {
+			System.out.println("Digite a quantidade pedida: ");
+			a[i] = info.nextDouble();
+			c[i] = (a[i] / 2) * pu;
+			b[i] = ca / a[i];
+			d[i] = cpa * c[i];
+			e[i] = cc * b[i];
+			f[i] = d[i] + e[i];
+		}
+		a[1] = (2 * ca * cc) / (cpa * pu);
+		
+		System.out.println("Deseja ver os dados: ");
+		System.out.println("1 - Sim, 2 - Não: ");
+		int opcao = info.nextInt();
+		
+		if(opcao == 1) {
+		for(int i = 0; i < materiais+1; i++) {
+		System.out.println("A: "+a[i]);
+		System.out.println("B: "+b[i]);
+		System.out.println("C: "+c[i]);
+		System.out.println("D: "+d[i]);
+		System.out.println("E: "+e[i]);
+		System.out.println("F: "+f[i]);
+	}
+		}
+		
+		info.close();
+		
+		
+		
+		/*for(int i = 0; i < 3; i++) {
+			c[i] = (a[i] / 2) * pu;
+			b[i] = ca / a[i];
+			d[i] = cpa * c[i];
+			e[i] = cc * b[i];
+			//e[1] = custoPedido * 8;
+			f[i] = d[i] + e[i];
+			System.out.println("A: "+a[i]);
+			System.out.println("B: "+b[i]);
+			System.out.println("C: "+c[i]);
+			System.out.println("D: "+d[i]);
+			System.out.println("E: "+e[i]);
+			System.out.println("F: "+f[i]);
+		} */
+	}
+	
+	/*Digite o consumo anual: 
+		3000
+		Digite o custo do pedido de compra: 
+		130
+		Digite o custo do material armazenado: 
+		025
+		Digite o preco unitario: 
+		25
+		Digite a quantidade pedida: 
+		100
+		Digite a quantidade pedida: 
+		353
+		Digite a quantidade pedida: 
+		1000*/
+
+}
