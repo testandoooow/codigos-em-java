@@ -1,0 +1,100 @@
+package fluxodecaixa;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Renda renda = new Renda();
+		Gastos gastos = new Gastos();
+		Scanner info = new Scanner(System.in);
+		int quantidade = 0;
+		double soma = 0;
+		double somaGastos = 0;
+		int i = 0;
+		int mes = 0;
+		int contador = 0;
+		double saldoTotal = 0;
+		int gasto = 0;
+		
+		System.out.println("Digite o tanto de mês: ");
+		mes = info.nextInt();
+		
+		double saldoAnterior[] = new double[mes];
+		do {
+			contador++;
+		System.out.println("Digite quantas formas de rendas você tem: ");
+		quantidade = info.nextInt();
+		for(i = 0; i < quantidade; i++) {
+			System.out.println("Digite o nome da renda: ");
+			renda.nomeRenda[i][i] = info.next();
+			System.out.printf("Digite o valor da renda: ", i+1);
+			renda.renda[i][i] = info.nextDouble();
+			soma += renda.renda[i][i];
+		}
+		double totalRenda = soma;
+		
+		System.out.println("Digite a quantidade de gastos: ");
+		gasto = info.nextInt();
+		for(i = 0; i < gasto; i++) {
+			System.out.println("Digite o nome do gasto: ");
+			gastos.nomeGasto[i][i] = info.next();
+			System.out.printf("Digite o valor do gasto: ",gasto);
+			gastos.gasto[i][i] = info.nextDouble();
+			somaGastos += gastos.gasto[i][i];
+		}
+		
+		double totalGastos = somaGastos;
+		saldoAnterior[contador-1] = totalRenda - totalGastos;
+		saldoTotal += saldoAnterior[contador-1];
+		
+		}while (contador < mes);
+		
+		for(i = 0; i < mes; i++) {
+			System.out.println("Mes: "+i+1);
+			
+			System.out.printf("%d rendas: \n",i+1);
+			//for(i = 0; i < quantidade; i++) {
+			System.out.println("Renda: "+renda.nomeRenda[i][i]);
+			System.out.println("Valor da renda: "+renda.renda[i][i]);
+			//}
+			System.out.printf("%d Gastos: \n",gasto);
+			//for(i = 0; i < gasto; i++) {
+				System.out.println("Gasto: "+gastos.nomeGasto[i][i]);
+				System.out.println("Valor do gasto: "+gastos.gasto[i][i]);
+			//}
+		}
+		
+		/*System.out.printf("%d rendas: \n",i);
+		for(i = 0; i < quantidade; i++) {
+		System.out.println("Renda: "+renda.nomeRenda[mes][i]);
+		System.out.println("Valor da renda: "+renda.renda[mes][i]);
+		}
+		System.out.printf("%d Gastos: \n",gasto);
+		for(i = 0; i < gasto; i++) {
+			System.out.println("Gasto: "+gastos.nomeGasto[mes][i]);
+			System.out.println("Valor do gasto: "+gastos.gasto[mes][i]);
+		}*/
+		//double saldoTotal = totalRenda - totalGastos;
+		
+		/*System.out.println("saldoTotal: "+saldoTotal);*/
+
+		info.close();
+	}
+
+}
+
+package fluxodecaixa;
+
+public class Renda {
+	Main main = new Main();
+	String nomeRenda[][] = new String[100][100];
+	double renda[][] = new double[100][100];
+}
+
+package fluxodecaixa;
+
+public class Gastos {
+	String nomeGasto[][] = new String[100][100];
+	double gasto[][] = new double[100][100];
+
+}
