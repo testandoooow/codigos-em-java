@@ -29,7 +29,6 @@ package payback1;
 
 public class Variaveis {
 	double investimento = 60000;
-	double saldo = 0;
 	double x = 0;
 
 }
