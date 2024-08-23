@@ -52,3 +52,33 @@ public class Main {
 	}
 
 }
+
+
+/*Classes necessarias
+
+package xyz;
+
+public class X{
+	boolean importante = false;
+	boolean linhaFrente = false;
+	boolean similar = true;
+	String nome = "X";
+}
+
+package xyz;
+
+public class Z {
+	boolean importante = true;
+	boolean linhaFrente = true;
+	boolean similar = false;
+	String nome = "Z";
+}
+package xyz;
+
+public class Y {
+	boolean importante = true;
+	boolean linhaFrente = true;
+	boolean similar = true;
+	String nome = "Y";
+}
+*/
