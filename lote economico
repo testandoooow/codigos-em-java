@@ -1,0 +1,74 @@
+package loteEconomico;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner info = new Scanner(System.in);
+		System.out.println("Digite a quantidade de materiais: ");
+		int materiais = info.nextInt();
+		
+		double a[] = new double[materiais+1];
+		double b[] = new double[materiais+1];
+		double c[] = new double[materiais+1];
+		double d[] = new double[materiais+1];
+		double e[] = new double[materiais+1];
+		double f[] = new double[materiais+1];
+		
+		System.out.println("Digite o consumo anual: ");
+		double ca = info.nextDouble();
+		System.out.println("Digite o custo do pedido de compra: ");
+		double cc = info.nextDouble();
+		System.out.println("Digite o custo do material armazenado: ");
+		String numero = info.next();
+		double cpa = Double.parseDouble(numero);
+		System.out.println("Digite o preco unitario: ");
+		double pu = info.nextDouble();
+		
+		/*ca = 4000
+		cc = 160
+		cpa = 0.35
+		pu = 35*/
+		
+		int i = 0;
+		System.out.println("Digite a quantidade pedida: ");
+		a[0] = info.nextDouble();
+		
+		a[1] = ((2 * ca * cc) / cpa) * pu;
+		double raizQuadrada = Math.sqrt(a[1]);
+		a[1] = raizQuadrada;
+		
+		for(i = 2; i < materiais+1; i++) {
+			System.out.println("Digite a quantidade pedida: ");
+			a[i] = info.nextDouble();
+		}
+		
+		for(i = 0; i < materiais+1; i++) {
+			c[i] = (a[i] / 2) * pu;
+			b[i] = ca / a[i];
+			d[i] = cpa * c[i];
+			e[i] = cc * b[i];
+			f[i] = d[i] + e[i];
+		}
+		
+		
+		System.out.println("Deseja ver os dados: ");
+		System.out.println("1 - Sim, 2 - Não: ");
+		int opcao = info.nextInt();
+		
+		if(opcao == 1) {
+		for(i = 0; i < materiais+1; i++) {
+		System.out.println(+i+1+" Estoque, A: "+a[i]);
+		System.out.println(+i+1+" Numero de pedidos anual, B: "+b[i]);
+		System.out.println(+i+1+" Estoque médio, C: "+c[i]);
+		System.out.println(+i+1+" Custo de posse, D: "+d[i]);
+		System.out.println(+i+1+" Custo do pedido, E: "+e[i]);
+		System.out.println(+i+1+" Custo total, F: "+f[i]);
+		System.out.println("-----------------------------");
+	}
+		}
+		
+		info.close();
+	}
+}
