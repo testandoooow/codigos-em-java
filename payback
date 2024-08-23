@@ -1,4 +1,4 @@
-package payback;
+package payback1;
 
 import java.util.Scanner;
 
@@ -7,21 +7,31 @@ public class Main {
 	public static void main(String[] args) {
 		Variaveis variaveis = new Variaveis();
 		Scanner info = new Scanner(System.in);
-		System.out.println("Digite seu investimento: ");
-		variaveis.investimento = info.nextDouble();
-		do {
-			System.out.println("Digite seu saldo: ");
-			variaveis.saldo = info.nextDouble();
-			if(variaveis.saldo > variaveis.investimento) {
-				System.out.println("Saldo maior que o investimento.");
-			}
-			} while(variaveis.saldo > variaveis.investimento);
-		
-		variaveis.x = variaveis.investimento / variaveis.saldo;
-		System.out.println(variaveis.investimento);
-		System.out.println(variaveis.saldo);
+		double saldo[] = {10000, 5000, 5000, 5000, 6000, 6000, 8000, 15000, 20000, 10000};
+		double soma = 0;
+		int i = 0;
+		for(i = 0; i < 10; i++) {
+			soma += saldo[i];
+		}
+		double media = 0;
+		media = soma / i;
+		System.out.println(variaveis.investimento); 
+		variaveis.x = variaveis.investimento / media;
 		System.out.println("Retorno em "+variaveis.x+" meses");
 
 	}
 
 }
+
+/*Classe necessaria
+
+package payback1;
+
+public class Variaveis {
+	double investimento = 60000;
+	double saldo = 0;
+	double x = 0;
+
+}
+
+*/
