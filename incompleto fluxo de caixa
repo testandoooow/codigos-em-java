@@ -74,3 +74,22 @@ public class Main {
 	}
 
 }
+
+/*Classes necessarias
+
+
+package fluxodecaixa;
+
+public class Renda {
+	Main main = new Main();
+	String nomeRenda[][] = new String[100][100];
+	double renda[][] = new double[100][100];
+}
+
+package fluxodecaixa;
+
+public class Gastos {
+	String nomeGasto[][] = new String[100][100];
+	double gasto[][] = new double[100][100];
+
+}*/
