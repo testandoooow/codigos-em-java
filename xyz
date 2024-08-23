@@ -1,0 +1,230 @@
+package xyz;
+
+public class Main {
+	
+	public void e() {
+		System.out.println("e");
+	}
+
+	public static void main(String[] args) {
+		Main main = new Main();
+		X x = new X();
+		Z z = new Z();
+		Y y = new Y();
+		boolean r1 = false;
+		boolean r2 = false;
+		boolean r3 = false;
+		boolean r4 = false;
+		boolean r5 = false;
+		boolean r6 = false;
+		boolean r7 = false;
+		boolean r8 = false;
+		boolean q1 = false;
+		boolean q2 = false;
+		boolean q3 = false;
+		boolean q4 = false;
+		boolean q5 = false;
+		boolean q6 = false;
+		boolean q7 = false;
+		boolean q8 = false;
+		int i = 0;
+		
+		do {
+		
+		q1 = (x.importante && x.linhaFrente && x.similar) ? true : false;
+		if(q1) {
+			r1 = true;
+			System.out.println(x.nome);
+		}
+		q1 = (z.importante && z.linhaFrente && z.similar) ? true : false;
+		if(q1) {
+			r1 = true;
+			System.out.println(z.nome);
+		}
+		q1 = (y.importante && y.linhaFrente && y.similar) ? true : false;
+		if(q1) {
+			r1 = true;
+			System.out.println(y.nome);
+		}
+		
+		if(r1 == false) {
+			i++;
+		}
+		
+		q2 = (x.importante && x.linhaFrente && x.similar == false) ? true : false;
+		if(q2) {
+			r2 = true;
+			System.out.println(x.nome);
+		}
+		q2 = (z.importante && z.linhaFrente && z.similar == false) ? true : false;
+		if(q2) {
+			r2 = true;
+			System.out.println(z.nome);
+		}
+		q2 = (y.importante && y.linhaFrente && y.similar == false) ? true : false;
+		if(q2) {
+			r2 = true;
+			System.out.println(y.nome);
+		}
+		
+		if(r2 == false) {
+			i++;
+		}
+		
+		q3 = (x.importante && x.linhaFrente == false && x.similar) ? true : false;
+		if(q3) {
+			r3 = true;
+			System.out.println(x.nome);
+		}
+		q3 = (z.importante && z.linhaFrente == false && z.similar) ? true : false;
+		if(q3) {
+			r3 = true;
+			System.out.println(z.nome);
+		}
+		q3 = (y.importante && y.linhaFrente == false && y.similar) ? true : false;
+		if(q3) {
+			r3 = true;
+			System.out.println(y.nome);
+		}
+		
+		if(r3 == false) {
+			i++;
+		}
+		
+		q4 = (x.importante && x.linhaFrente == false && x.similar == false) ? true : false;
+		if(q4) {
+			r4 = true;
+			System.out.println(x.nome);
+		}
+		q4 = (z.importante && z.linhaFrente == false && z.similar == false) ? true : false;
+		if(q4) {
+			r4 = true;
+			System.out.println(z.nome);
+		}
+		q4 = (y.importante && y.linhaFrente == false && y.similar == false) ? true : false;
+		if(q4) {
+			r4 = true;
+			System.out.println(y.nome);
+		}
+		
+		if(r4 == false) {
+			i++;
+		}
+		
+		q5 = (x.importante == false && x.linhaFrente == false && x.similar) ? true : false;
+		if(q5) {
+			r5 = true;
+			System.out.println(x.nome);
+		}
+		q5 = (z.importante == false && z.linhaFrente == false && z.similar) ? true : false;
+		if(q5) {
+			r5 = true;
+			System.out.println(z.nome);
+		}
+		q5 = (y.importante == false && y.linhaFrente == false && y.similar) ? true : false;
+		if(q5) {
+			r5 = true;
+			System.out.println(y.nome);
+		}
+		
+		if(r5 == false) {
+			i++;
+		}
+		
+		q6 = (x.importante == false && x.linhaFrente && x.similar == false) ? true : false;
+		if(q6) {
+			r6 = true;
+			System.out.println(x.nome);
+		}
+		q6 = (z.importante == false && z.linhaFrente && z.similar == false) ? true : false;
+		if(q6) {
+			r6 = true;
+			System.out.println(z.nome);
+		}
+		q6 = (y.importante == false && y.linhaFrente && y.similar == false) ? true : false;
+		if(q6) {
+			r6 = true;
+			System.out.println(y.nome);
+		}
+		
+		if(r6 == false) {
+			i++;
+		}
+		
+		q7 = (x.importante == false && x.linhaFrente && x.similar) ? true : false;
+		if(q7) {
+			r7 = true;
+			System.out.println(x.nome);
+		}
+		q7 = (z.importante == false && z.linhaFrente && z.similar) ? true : false;
+		if(q7) {
+			r7 = true;
+			System.out.println(z.nome);
+		}
+		q7 = (y.importante == false && y.linhaFrente && y.similar) ? true : false;
+		if(q7) {
+			r7 = true;
+			System.out.println(y.nome);
+		}
+		
+		if(r7 == false) {
+			i++;
+		}
+		
+		q8 = (x.importante == false && x.linhaFrente == false && x.similar == false) ? true : false;
+		if(q8) {
+			r8 = true;
+			System.out.println(x.nome);
+		}
+		q8 = (z.importante == false && z.linhaFrente == false && z.similar == false) ? true : false;
+		if(q8) {
+			r8 = true;
+			System.out.println(z.nome);
+		}
+		q8 = (y.importante == false && y.linhaFrente == false && y.similar == false) ? true : false;
+		if(q8) {
+			r8 = true;
+			System.out.println(y.nome);
+		}
+		
+		if(r8 == false) {
+			i++;
+		}
+			for(int j = 0; j < i; j++) {
+				System.out.println(x.nome);
+			}
+			
+		} while(r1 == false);
+	}
+
+}
+
+
+/*Classes necessarias
+
+package xyz;
+
+public class X{
+	boolean importante = false;
+	boolean linhaFrente = false;
+	boolean similar = true;
+	String nome = "X";
+}
+
+package xyz;
+
+public class Z {
+	boolean importante = true;
+	boolean linhaFrente = true;
+	boolean similar = false;
+	String nome = "Z";
+}
+package xyz;
+
+public class Y {
+	boolean importante = true;
+	boolean linhaFrente = true;
+	boolean similar = true;
+	String nome = "Y";
+}
+*/
