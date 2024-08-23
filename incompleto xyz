@@ -1,0 +1,54 @@
+package xyz;
+
+public class Main {
+	
+	public void e() {
+		System.out.println("e");
+	}
+
+	public static void main(String[] args) {
+		Main main = new Main();
+		X x = new X();
+		Z z = new Z();
+		Y y = new Y();
+		boolean r1 = false;
+		boolean r2 = false;
+		boolean q = false;
+		boolean q1 = false;
+		
+		do {
+		
+		q = (x.importante && x.linhaFrente && x.similar) ? true : false;
+		if(q) {
+			r1 = true;
+			System.out.println(x.nome);
+		}
+		q = (z.importante && z.linhaFrente && z.similar) ? true : false;
+		if(q) {
+			r1 = true;
+			System.out.println(z.nome);
+		}
+		q = (y.importante && y.linhaFrente && y.similar) ? true : false;
+		if(q) {
+			r1 = true;
+			System.out.println(y.nome);
+		}
+		
+		q1 = (x.importante && x.linhaFrente) ? true : false;
+		if(q1) {
+			System.out.println(x.nome);
+		}
+		q1 = (z.importante && z.linhaFrente) ? true : false;
+		if(q1) {
+			System.out.println(z.nome);
+		}
+		q1 = (y.importante && y.linhaFrente) ? true : false;
+		if(q1) {
+			System.out.println(y.nome);
+		}
+		
+		
+		} while(r1 == false);
+	}
+
+}
