@@ -1,74 +1,82 @@
-package loteEconomico;
-
+package fluxodecaixa;
 import java.util.Scanner;
 
 public class Main {
 
 	public static void main(String[] args) {
+		Renda renda = new Renda();
+		Gastos gastos = new Gastos();
 		Scanner info = new Scanner(System.in);
-		System.out.println("Digite a quantidade de materiais: ");
-		int materiais = info.nextInt();
-		
-		double a[] = new double[materiais+1];
-		double b[] = new double[materiais+1];
-		double c[] = new double[materiais+1];
-		double d[] = new double[materiais+1];
-		double e[] = new double[materiais+1];
-		double f[] = new double[materiais+1];
-		
-		System.out.println("Digite o consumo anual: ");
-		double ca = info.nextDouble();
-		System.out.println("Digite o custo do pedido de compra: ");
-		double cc = info.nextDouble();
-		System.out.println("Digite o custo do material armazenado: ");
-		String numero = info.next();
-		double cpa = Double.parseDouble(numero);
-		System.out.println("Digite o preco unitario: ");
-		double pu = info.nextDouble();
-		
-		/*ca = 4000
-		cc = 160
-		cpa = 0.35
-		pu = 35*/
-		
+		int quantidade = 0;
+		double somaRenda = 0;
+		double somaGastos = 0;
 		int i = 0;
-		System.out.println("Digite a quantidade pedida: ");
-		a[0] = info.nextDouble();
+		int mes = 0;
+		int contador = 0;
+		double saldoTotal = 0;
+		int gasto = 0;
+		int j = 0;
+		double totalRenda = 0;
+		double totalGastos = 0;
+		double saldo = 0;
 		
-		a[1] = ((2 * ca * cc) / cpa) * pu;
-		double raizQuadrada = Math.sqrt(a[1]);
-		a[1] = raizQuadrada;
+		System.out.println("Digite o tanto de mês: ");
+		mes = info.nextInt();
 		
-		for(i = 2; i < materiais+1; i++) {
-			System.out.println("Digite a quantidade pedida: ");
-			a[i] = info.nextDouble();
+		double saldoAnterior[] = new double[100];
+		System.out.println("Digite quantas formas de rendas você tem: ");
+		quantidade = info.nextInt();
+		
+		System.out.println("Digite a quantidade de gastos: ");
+		gasto = info.nextInt();
+		
+		for(j = 0; j < mes; j++) {
+		for(i = 0; i < quantidade; i++) {
+			System.out.printf("Digite o nome da %d renda do mes %d: ",i+1,j+1);
+			renda.nomeRenda[j][i] = info.next();
+			System.out.println("Digite o valor previsto da renda: ");
+			renda.previsto[j][i] = info.nextDouble();
+			System.out.printf("Digite o valor da renda: ", i+1);
+			renda.renda[j][i] = info.nextDouble();
+			somaRenda += renda.renda[j][i];
+			}
+		
+			for(i = 0; i < gasto; i++) {
+			System.out.printf("Digite o nome do %d gasto do mes %d: ",i+1, j+1);
+			gastos.nomeGasto[j][i] = info.next();
+			System.out.println("Digite o valor previsto do gasto: ");
+			gastos.previsto[j][i] = info.nextDouble();
+			System.out.printf("Digite o valor do gasto: ",gasto);
+			gastos.gasto[j][i] = info.nextDouble();
+			somaGastos += gastos.gasto[j][i];
+			}
+			saldoAnterior[j] = somaRenda - somaGastos;
+			saldoTotal += saldoAnterior[j];
+			}
+		
+			System.out.println("------------------------------------");
+		
+		for(j = 0; j < mes; j++) {
+		for(i = 0; i < quantidade; i++) {
+			System.out.printf("Mes: %d\n",j+1);
+			
+			System.out.printf("%d rendas: \n",i+1);
+			System.out.println("Renda: "+renda.nomeRenda[j][i]);
+			System.out.println("Valor previsto da renda: "+renda.previsto[j][i]);				
+			System.out.println("Valor da renda: "+renda.renda[j][i]);
+			System.out.println("------------------------------------");
+			System.out.printf("%d Gastos: \n",gasto);
+			System.out.println("Gasto: "+gastos.nomeGasto[j][i]);
+			System.out.println("Valor previsto do gasto: "+gastos.previsto[j][i]);
+			System.out.println("Valor do gasto: "+gastos.gasto[j][i]);
+			System.out.println("Saldo Anterior: "+saldoAnterior[j]);
+			System.out.println("------------------------------------");
+		}
 		}
 		
-		for(i = 0; i < materiais+1; i++) {
-			c[i] = (a[i] / 2) * pu;
-			b[i] = ca / a[i];
-			d[i] = cpa * c[i];
-			e[i] = cc * b[i];
-			f[i] = d[i] + e[i];
-		}
-		
-		
-		System.out.println("Deseja ver os dados: ");
-		System.out.println("1 - Sim, 2 - Não: ");
-		int opcao = info.nextInt();
-		
-		if(opcao == 1) {
-		for(i = 0; i < materiais+1; i++) {
-		System.out.println(+i+1+" Estoque, A: "+a[i]);
-		System.out.println(+i+1+" Numero de pedidos anual, B: "+b[i]);
-		System.out.println(+i+1+" Estoque médio, C: "+c[i]);
-		System.out.println(+i+1+" Custo de posse, D: "+d[i]);
-		System.out.println(+i+1+" Custo do pedido, E: "+e[i]);
-		System.out.println(+i+1+" Custo total, F: "+f[i]);
-		System.out.println("-----------------------------");
-	}
-		}
-		
+		System.out.println("Saldo total: "+saldoTotal);
+
 		info.close();
 	}
+
 }
