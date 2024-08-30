@@ -1,0 +1,292 @@
+package frameFluxoDeCaixa;
+
+import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+
+public class JFrame1 extends JFrame implements ActionListener{
+	
+	int mes = 0;
+	int i = 0;
+	String nomeRenda = "";
+	String nomeGasto = "";
+	double valorRenda = 0;
+	double valorGasto = 0;
+
+	private static final long serialVersionUID = 1L;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JLabel lblNewLabel_2;
+	private JTextField textField_2;
+	private JLabel lblNewLabel_3;
+	private JLabel lblNewLabel_4;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JMenuBar menuBar;
+	private JMenuBar menuBar_1;
+	private JMenu mnNewMenu_1;
+	private JMenuItem mntmNewMenuItem_1;
+	private JMenuItem mntmNewMenuItem;
+	private JMenuItem mntmNewMenuItem_2;
+	JFrame2 recebeTexto2;
+	private JTextField valor1;
+	private JLabel textoRenda;
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					JFrame1 frame = new JFrame1();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public JFrame1() {
+		Variaveis variavel = new Variaveis();
+		setDefaultCloseOperation(JFrame1.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Digite a quantidade de mes:");
+		lblNewLabel.setBounds(10, 38, 178, 14);
+		contentPane.add(lblNewLabel);
+		
+		textField = new JTextField();
+		textField.setBounds(175, 35, 56, 20);
+		JLabel labelMes = new JLabel("");
+		labelMes.setBounds(269, 38, 46, 14);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		valor1 = new JTextField();
+		valor1.setBounds(338, 62, 86, 20);
+		JButton btnNewButton = new JButton("Inserir");
+		btnNewButton.setBounds(161, 213, 89, 23);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				mes = Integer.parseInt(textField.getText());
+				variavel.mes = mes;
+				labelMes.setText(String.valueOf(mes));
+				
+				if(recebeTexto2 == null) {
+					recebeTexto2 = new JFrame2();
+					recebeTexto2.setVisible(true);
+					recebeTexto2.armazenar(labelMes.getText());
+				} else {
+					recebeTexto2.setVisible(true);
+					recebeTexto2.setState(JFrame2.NORMAL);
+					recebeTexto2.armazenar(labelMes.getText());
+				}
+				recebeTexto2.setVisible(false);
+			}
+		});
+		contentPane.add(btnNewButton);
+		
+		menuBar_1 = new JMenuBar();
+		menuBar_1.setBounds(0, 0, 424, 22);
+		contentPane.add(menuBar_1);
+		
+		mnNewMenu_1 = new JMenu("Adicionar");
+		menuBar_1.add(mnNewMenu_1);
+		
+		mntmNewMenuItem_1 = new JMenuItem("Adicionar renda");
+		mntmNewMenuItem_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JFrame2 frame = new JFrame2();
+				frame.setVisible(true);
+			}
+		});
+		mnNewMenu_1.add(mntmNewMenuItem_1);
+		
+		mntmNewMenuItem = new JMenuItem("Adicionar gastos");
+		mnNewMenu_1.add(mntmNewMenuItem);
+		
+		mntmNewMenuItem_2 = new JMenuItem("Visualizar rendas");
+		textoRenda = new JLabel("New label");
+		textoRenda.setBounds(269, 63, 46, 14);
+		mntmNewMenuItem_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(recebeTexto2 == null) {
+					recebeTexto2 = new JFrame2();
+					recebeTexto2.setVisible(true);
+					recebeTexto2.Renda(textoRenda.getText());
+				} else {
+					recebeTexto2.setVisible(true);
+					recebeTexto2.setState(JFrame2.NORMAL);
+					recebeTexto2.Renda(textoRenda.getText());
+				}
+				recebeTexto2.setVisible(false);
+				System.out.println(textoRenda.getText());
+			}
+		});
+		mnNewMenu_1.add(mntmNewMenuItem_2);
+		contentPane.add(labelMes);
+		
+		valor1.setVisible(false);
+		contentPane.add(valor1);
+		valor1.setColumns(10);
+		contentPane.add(textoRenda);
+		JMenuItem item = new JMenuItem("Opções");
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package frameFluxoDeCaixa;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class JFrame2 extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					JFrame2 frame = new JFrame2();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	String nomeRenda[] = new String[50];
+	double valorRenda[] = new double[50];
+	int i = 0;
+	JFrame1 frame;
+	private JTextField textField;
+	int teste = 0;
+	private JTextField textField2;
+	/**
+	 * Create the frame.
+	 */
+	public JFrame2() {
+		Variaveis variavel = new Variaveis();
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("Digite o nome da renda: ");
+		lblNewLabel_1.setBounds(10, 13, 149, 14);
+		contentPane.add(lblNewLabel_1);
+		
+		JTextField textField_1 = new JTextField();
+		textField_1.setBounds(148, 10, 86, 20);
+		contentPane.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JLabel lblNewLabel_2 = new JLabel("Digite o valor da renda: ");
+		lblNewLabel_2.setBounds(10, 38, 149, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JTextField textField_2 = new JTextField();
+		textField_2.setBounds(148, 35, 86, 20);
+		contentPane.add(textField_2);
+		textField_2.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Inserir");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				String texto = textField_2.getText();
+				
+				for(i = 0; i <= teste; i++) {
+					nomeRenda[i] = textField_1.getText();
+					valorRenda[i] = Double.parseDouble(texto);
+				}
+				i++;
+			}
+		});
+		btnNewButton.setBounds(145, 132, 89, 23);
+		contentPane.add(btnNewButton);
+		
+		textField = new JTextField();
+		textField.setBounds(293, 51, 86, 20);
+		contentPane.add(textField);
+		textField.setColumns(10);
+		
+		textField2 = new JTextField();
+		textField2.setBounds(293, 97, 86, 20);
+		contentPane.add(textField2);
+		textField2.setColumns(10);
+		
+		
+	}
+	
+	public void armazenar(String recebe) {
+		textField.setText(recebe);
+		teste = Integer.parseInt(textField.getText());
+	}
+	
+	public void Renda(String e) {
+		textField2.setText(e);
+	}
+	
+	public double valor(double r) {
+		return valorRenda[i];
+	}
+}
