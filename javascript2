@@ -1,0 +1,88 @@
+/*const funcionario = {
+    nome: ["Funcionario1", "Funcionario2", "Funcionario3"],
+    salario: [1.250, 2.376, 7.279]
+}
+var salarioTotal = 0; 
+
+for(var i = 0; i < 3; i++){
+    salarioTotal += funcionario.salario[i];
+}
+
+var media = salarioTotal / funcionario.salario.length;
+
+console.log(media); 7 QUESTÃO*/
+
+/*const produtos = {
+    nome: ["Produto1", "Produto2", "Produto3"],
+    preco: [100, 200, 300]
+}
+var total = [];
+var desconto = 0.15;
+
+for(var i = 0; i < produtos.preco.length; i++){
+    if(produtos.preco[i] > 100){
+        total[i] = produtos.preco[i] - (produtos.preco[i] * desconto);
+    }
+}
+
+
+for(var i = 0; i < produtos.preco.length; i++){
+    console.log(total[i]);
+} 10 QUESTÃO*/
+
+/*const estoque = {
+    produtos: ["Produto1", "Produto2", "Produto3"],
+    quantidade: [3, 7, 19]
+}
+
+for(var i = 0; i < estoque.quantidade.length; i++){
+    if(estoque.quantidade[i] <= 5){
+        estoque.quantidade[i]+=10;
+    }
+}
+
+for(var i = 0; i < estoque.quantidade.length; i++){
+    console.log(estoque.quantidade[i]);
+} 12 QUESTÃO*/
+
+/*const aluno = {
+    nome: ["Aluno1", "Aluno2", "Aluno3"],
+    notas: {
+        portugues: 
+    }
+}
+var notaTotal
+for(var i = 0; i < 1; i++){
+    notaTotal = (aluno[i].notas.portugues + aluno[i].notas.matematica + aluno[i].notas.quimica);
+}
+
+var media = notaTotal / aluno.notas.length;
+
+console.log(media); QUESTÃO 13 INCOMPLETA*/
+
+/*let vendas = [1, 3, 5];
+var vendido = [];
+
+let produto = {
+    nome: ["Produto1", "Produto2", "Produto3"],
+    contagem: [10, 20, 30]
+}
+
+function comprar(numero, quantidade){
+    var coluna = numero - 1;
+    vendas[coluna] = [quantidade];
+}
+
+//comprar(1, 1);
+
+
+function contarVendas(array){
+    return array.map(function(){
+        for(var i = 0; i < produto.contagem.length; i++){
+            vendido[i] = produto.contagem[i] - (produto.contagem[i] - array[i]);
+        } 
+        return vendido;
+        });
+    }
+
+console.log(contarVendas(vendas)); 14 QUESTÃO*/
